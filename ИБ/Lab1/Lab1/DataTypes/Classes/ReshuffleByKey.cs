@@ -8,6 +8,8 @@ namespace Lab1
 
         char[,] matrix;
 
+        public string Name => "Перестановка по ключу";
+
         public ReshuffleByKey(string key)
         {
             this.key = key;

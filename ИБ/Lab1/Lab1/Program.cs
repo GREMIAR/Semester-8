@@ -6,11 +6,18 @@ class Program
 {
     static void Main(string[] args)
     {
-        PolybeanSquare polybeanSquare = new PolybeanSquare();
-        Console.WriteLine("тест");
-        string r1 = polybeanSquare.Encrypt("тест");
-        Console.WriteLine(r1);
-        string r2 = polybeanSquare.Decrypt(r1);
-        Console.WriteLine(r2);
+        TestEncryption(new PolybeanSquare());
+    }
+
+    static void TestEncryption(IEncryption encryption)
+    {
+        string text = "тест? ещё и много";
+        Console.WriteLine("Тестирование шифрования - "+encryption.Name);
+
+        Console.WriteLine("Текст который будем шифровать - " + text);
+        string en = encryption.Encrypt(text);
+        Console.WriteLine("Зашифрованный текст - " + en);
+        string de = encryption.Decrypt(en);
+        Console.WriteLine("Расшифрованный текст - " + de);
     }
 }

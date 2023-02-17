@@ -4,6 +4,7 @@ namespace Lab1;
 
 class PolybeanSquare : IEncryption
 {
+
     char[,] square = new char[,]
     {
         {'й','ц','у','к','е','н' },
@@ -13,6 +14,8 @@ class PolybeanSquare : IEncryption
         {'ч','с','м','и','т','ь' },
         {'б','ю','ё',' ','.',',' },
     };
+
+    public string Name => "Полибианский квадрат";
 
     int FixIndexEn(int i)
     {
