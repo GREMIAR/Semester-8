@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Lab1;
 
@@ -6,12 +7,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        TestEncryption(new PolybeanSquare());
+        TestEncryption(new BigramMethod("республика"));
     }
 
     static void TestEncryption(IEncryption encryption)
     {
-        string text = "тест? ещё и много";
+        string text = "пустьконсулыбудутбдительны";
         Console.WriteLine("Тестирование шифрования - "+encryption.Name);
 
         Console.WriteLine("Текст который будем шифровать - " + text);
