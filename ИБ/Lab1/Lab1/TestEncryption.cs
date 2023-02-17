@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab1
 {
     internal static class TestEncryption
     {
-        public static void Test(IEncryption encryption)
+        public static void Test(IEncryption encryption, string text)
         {
-            string text = "неясное становится еще более непонятны";
             text = text.ToLower();
             Console.WriteLine("Тестирование шифрования - " + encryption.Name);
 

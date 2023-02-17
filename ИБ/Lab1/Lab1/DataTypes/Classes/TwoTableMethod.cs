@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab1.DataTypes.Classes
+﻿namespace Lab1.DataTypes.Classes
 {
     public class TwoTableMethod : IEncryption
     {
@@ -27,7 +21,7 @@ namespace Lab1.DataTypes.Classes
             {'ю','.','д','щ','з','ж' },
             {'э','ъ',' ',',','ё','х' },
         };
-        //та же строка но слобец от другой буквы
+
         public string Name => "Метод двух таблиц";
 
         public string Decrypt(string text)
@@ -46,10 +40,10 @@ namespace Lab1.DataTypes.Classes
         public string Encrypt(string text)
         {
             string encryptedText = string.Empty;
-            for (int i=0;i<text.Length-1;i+=2)
+            for (int i = 0; i < text.Length - 1; i += 2)
             {
                 Cell(text[i], out int row1, out int column1, square2);
-                Cell(text[i+1], out int row2, out int column2, square1);
+                Cell(text[i + 1], out int row2, out int column2, square1);
                 encryptedText += square1[row1, column2];
                 encryptedText += square2[row2, column1];
             }
@@ -60,11 +54,11 @@ namespace Lab1.DataTypes.Classes
         {
             row = -1;
             column = -1;
-            for(int i=0;i<square.GetLength(0);i++)
+            for (int i = 0; i < square.GetLength(0); i++)
             {
-                for (int f = 0; f < square.GetLength(1);f++)
+                for (int f = 0; f < square.GetLength(1); f++)
                 {
-                    if (c == square[i,f])
+                    if (c == square[i, f])
                     {
                         row = i;
                         column = f;

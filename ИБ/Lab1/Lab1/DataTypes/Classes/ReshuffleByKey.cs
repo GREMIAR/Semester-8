@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Lab1
 {
@@ -27,10 +26,10 @@ namespace Lab1
 
             Dictionary<char, char[]> matrix2 = new();
 
-            for (int i=0;i<key.Length;i++)
+            for (int i = 0; i < key.Length; i++)
             {
                 char current = key[i];
-                if(matrix1.TryGetValue(current, out char[] values))
+                if (matrix1.TryGetValue(current, out char[] values))
                 {
                     matrix2.Add(current, values);
                 }
@@ -46,7 +45,7 @@ namespace Lab1
             InitMatrix1(text, key);
 
             SortedDictionary<char, char[]> sortedMatrix = new SortedDictionary<char, char[]>(matrix1);
-            
+
             return MatrixToText(sortedMatrix);
         }
 
@@ -61,7 +60,7 @@ namespace Lab1
                 for (int f = 0; f < rowsNumber; f++)
                 {
                     int index = i * (rowsNumber) + f;
-                    if (index>=text.Length)
+                    if (index >= text.Length)
                     {
                         valueKey[f] = ' ';
                     }
@@ -77,7 +76,7 @@ namespace Lab1
         string MatrixToText(IDictionary<char, char[]> sortedMatrix)
         {
             string str = string.Empty;
-            foreach(var value in sortedMatrix.Values)
+            foreach (var value in sortedMatrix.Values)
             {
                 str += new string(value);
             }
