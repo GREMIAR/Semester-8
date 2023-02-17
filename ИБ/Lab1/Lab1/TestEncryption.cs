@@ -10,7 +10,8 @@ namespace Lab1
     {
         public static void Test(IEncryption encryption)
         {
-            string text = "НЕЯСНОЕ СТАНОВИТСЯ ЕЩЕ БОЛЕЕ НЕПОНЯТНЫМ";
+            string text = "неясное становится еще более непонятны";
+            text = text.ToLower();
             Console.WriteLine("Тестирование шифрования - " + encryption.Name);
 
             Console.WriteLine("Текст который будем шифровать - " + text);

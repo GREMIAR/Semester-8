@@ -44,11 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\Classes\TwoTableMethod.cs" />
     <Compile Include="DataTypes\Interfaces\ICrypting.cs" />
     <Compile Include="DataTypes\Classes\PolybeanSquare.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTypes\Classes\ReshuffleByKey.cs" />
+    <Compile Include="TestEncryption.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
