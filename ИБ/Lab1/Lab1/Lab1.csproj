@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\Classes\BigramMethod.cs" />
     <Compile Include="DataTypes\Classes\TwoTableMethod.cs" />
     <Compile Include="DataTypes\Interfaces\ICrypting.cs" />
     <Compile Include="DataTypes\Classes\PolybeanSquare.cs" />
