@@ -46,8 +46,8 @@
   <ItemGroup>
     <Compile Include="DataTypes\Classes\BigramMethod.cs" />
     <Compile Include="DataTypes\Classes\TwoTableMethod.cs" />
-    <Compile Include="DataTypes\Interfaces\ICrypting.cs" />
     <Compile Include="DataTypes\Classes\PolybeanSquare.cs" />
+    <Compile Include="DataTypes\Interfaces\IEncryption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTypes\Classes\ReshuffleByKey.cs" />

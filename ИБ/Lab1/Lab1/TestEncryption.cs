@@ -7,7 +7,7 @@ namespace Lab1
         public static void Test(IEncryption encryption, string text)
         {
             text = text.ToLower();
-            Console.WriteLine("Тестирование шифрования - " + encryption.Name);
+            Console.WriteLine("\nТестирование шифрования - " + encryption.Name);
 
             Console.WriteLine("Текст который будем шифровать - " + text);
             string en = encryption.Encrypt(text);

@@ -86,7 +86,7 @@ class BigramMethod : IEncryption
 
     public char[,] Table(string keyword)
     {
-        string alphabet = "абвгдежзиклмнопрстуфхцчшщыьэюя";
+        string alphabet = "абвгдежзиклмнопрстуфхцчшщьыэюя";
 
         string with_keyword = RemoveDup(keyword + alphabet);
 
