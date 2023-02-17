@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab1
 {
@@ -6,7 +8,7 @@ namespace Lab1
     {
         string key;
 
-        char[,] matrix;
+        Dictionary<char, char[]> matrix1;
 
         public string Name => "Перестановка по ключу";
 
@@ -18,30 +20,67 @@ namespace Lab1
 
         public string Decrypt(string text)
         {
-            throw new NotImplementedException();
+            int f = text.Length;
+            string keySorted = String.Concat(key.OrderBy(ch => ch));
+            InitMatrix1(text, keySorted);
+
+            Dictionary<char, char[]> matrix2 = new();
+
+            for (int i = 0; i < key.Length; i++)
+            {
+                char current = key[i];
+                if (matrix1.TryGetValue(current, out char[] values))
+                {
+                    matrix2.Add(current, values);
+                }
+            }
+
+            return MatrixToText(matrix2);
+
         }
 
         public string Encrypt(string text)
         {
+            int i = text.Length;
+            InitMatrix1(text, key);
+
+            SortedDictionary<char, char[]> sortedMatrix = new SortedDictionary<char, char[]>(matrix1);
+
+            return MatrixToText(sortedMatrix);
+        }
+
+        void InitMatrix1(string text, string key)
+        {
             double number = text.Length;
-
             int rowsNumber = (int)(Math.Ceiling(number / key.Length));
-
-            matrix = new char[rowsNumber, key.Length];
-
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            matrix1 = new Dictionary<char, char[]>();
+            for (int i = 0; i < key.Length; i++)
             {
-                for (int f = 0; f < matrix.GetLength(1); f++)
+                char[] valueKey = new char[rowsNumber];
+                for (int f = 0; f < rowsNumber; f++)
                 {
-                    matrix[i, f] = text[i * matrix.GetLength(1) + f];
+                    int index = i * (rowsNumber) + f;
+                    if (index >= text.Length)
+                    {
+                        valueKey[f] = ' ';
+                    }
+                    else
+                    {
+                        valueKey[f] = text[index];
+                    }
                 }
+                matrix1.Add(key[i], valueKey);
             }
+        }
 
-            for (int i = 0; i < text.Length; i++)
+        string MatrixToText(IDictionary<char, char[]> sortedMatrix)
+        {
+            string str = string.Empty;
+            foreach (var value in sortedMatrix.Values)
             {
-                //matrix.Sort([4, 7, 9, 0, 7, 6, 5])
+                str += new string(value);
             }
-            return text;
+            return str;
         }
     }
 }
