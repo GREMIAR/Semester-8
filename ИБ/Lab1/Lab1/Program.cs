@@ -1,4 +1,5 @@
-using Lab1.DataTypes.Classes;
+п»їusing Lab1.DataTypes.Classes;
+using System;
 
 namespace Lab1;
 
@@ -6,9 +7,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        TestEncryption.Test(new PolybeanSquare(), "пусть консулы будут блительны");
-        TestEncryption.Test(new ReshuffleByKey("республика"), "пусть консулы будут блительны");
-        TestEncryption.Test(new BigramMethod("республика"), "пустьконсулыбудутблительны");
-        TestEncryption.Test(new TwoTableMethod(), "пусть консулы будут блительны");
+        //TestEncryption.Test(new PolybeanSquare(), "ГЇГіГ±ГІГј ГЄГ®Г­Г±ГіГ«Г» ГЎГіГ¤ГіГІ ГЎГ«ГЁГІГҐГ«ГјГ­Г»");
+        //TestEncryption.Test(new ReshuffleByKey("Г°ГҐГ±ГЇГіГЎГ«ГЁГЄГ "), "ГЇГіГ±ГІГј ГЄГ®Г­Г±ГіГ«Г» ГЎГіГ¤ГіГІ ГЎГ«ГЁГІГҐГ«ГјГ­Г»");
+        //TestEncryption.Test(new BigramMethod("Г°ГҐГ±ГЇГіГЎГ«ГЁГЄГ "), "ГЇГіГ±ГІГјГЄГ®Г­Г±ГіГ«Г»ГЎГіГ¤ГіГІГЎГ«ГЁГІГҐГ«ГјГ­Г»");
+        //TestEncryption.Test(new TwoTableMethod(), "ГЇГіГ±ГІГј ГЄГ®Г­Г±ГіГ«Г» ГЎГіГ¤ГіГІ ГЎГ«ГЁГІГҐГ«ГјГ­Г»");
+        TestEncryption.Test(new StencilMethod(), "priezhau sestovo");
     }
 }
